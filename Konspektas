@@ -1,5 +1,5 @@
 #Listo sukurimas
-new_list = [5, 8, 9, 20
+new_list = [5, 8, 9, 20]
 
 #Dict sukurimas
 new_dict = {"zodis": "reiksme"}
