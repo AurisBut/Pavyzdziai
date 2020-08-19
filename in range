@@ -1,0 +1,10 @@
+prices = [10, 20, 30]
+total = 0
+for price in prices:
+    total += price
+print(f" Total: {total} EUR")
+
+number = [5, 2, 5, 2, 2]
+for x in number:
+    print(f' {x*"X"}')
+
