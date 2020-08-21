@@ -1,0 +1,19 @@
+phone = input("Telefono numeris: ")
+skaiciai = {
+    "1": "vienas",
+    "2": "du",
+    "3": "trys",
+    "4": "keturi",
+    "5": "penki",
+    "6": "sesi",
+    "7": "septyni",
+    "8": "astuoni",
+    "9": "devyni",
+    "0": "nulis"
+}
+
+output = ""
+for num in phone:
+    output += skaiciai.get(num) + " "
+print(f"Telefono numeris zodziais: {output}")
+print(f"Telefono numeris skaiciais: {phone}")
