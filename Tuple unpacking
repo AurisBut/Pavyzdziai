@@ -3,3 +3,7 @@ for a, b, c in mylist:
     print(a)
     print(b)
     print(c)
+   
+d = {'oranges': 1.99, 'apples': 1.49, 'milk': 0.99}
+for key, value in d.items():
+    print(key, value)
