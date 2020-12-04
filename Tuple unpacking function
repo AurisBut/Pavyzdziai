@@ -1,4 +1,4 @@
-work_hours = [('Aurimas', 100), ('Benas', 400), ('Regina', 800)]
+work_hours = [('Aurimas', 1000), ('Benas', 400), ('Regina', 800)]
 
 def employee_check(work_hours):
 
@@ -6,9 +6,9 @@ def employee_check(work_hours):
     employee_of_month = ''
 
     for employee,hours in work_hours:
-        if hours > current_max:
-            current_max = hours
-            employee_of_month = employee
+        if hours > current_max: #jei valandos daugiau, nei place holderis, t.y. 0
+            current_max = hours #tada tuple esancias valandas verciam kintamuoju `hours`
+            employee_of_month = employee #o pirma tuplo reiksme priskiriam `employee_of_month` kitamajam
         else:
             pass
 
