@@ -1,0 +1,18 @@
+def myfunc(*args):
+    # grazina 5% nuo a ir b sumos
+    return sum(args) * 0.05 # grazina tuple
+
+print(myfunc(40,60,52,40,10,532))
+
+====================================================================
+
+def myfunc(**kwargs):
+    if 'fruit' in kwargs:
+        print('My fruit of choise is {}'.format(kwargs['fruit'])) # grazina dictionary
+    else:
+        print('I did not find any fruit here')
+
+myfunc(fruit='apple')
+        
+====================================================================
+
