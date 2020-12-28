@@ -1,0 +1,26 @@
+import random
+
+def spejimas():
+
+    skaicius = random.randint(0, 1000)
+    bandymas = 1
+    teisingas = False
+
+    while not teisingas:
+        spejimas = int(input("Įvesk skaičių: "))
+
+        if spejimas == skaicius:
+            teisingas = True
+            print("Tu laimėjai!")
+        else:
+            bandymas += 1
+            if spejimas > skaicius:
+                print("Skaičius yra mažesnis")
+            else:
+                print("Skaičius yra didesnis")
+
+    print(f"Tau prireikė {bandymas} bandymų")
+
+spejimas()
+
+
