@@ -1,0 +1,19 @@
+import socket
+
+#serverį paleidžiam su - python3 server.py komanda
+#kitos galimos komandos: notepad, shutdown ir t.t.
+HOST = '192.198.0.17' #ipconfig-win arba ifconfig-linux
+PORT = 9090
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((HOST, PORT))
+
+server.listen()
+
+client, address = server.accept()
+
+while True:
+
+    print(f"Prisijungtra prie {address}")
+    cmd_imput = input("Įvesti komandą: ")
+    client.send(cmd_imput.encode('utf-8'))
+    print(client.recv(1027).decode('utf-8'))
