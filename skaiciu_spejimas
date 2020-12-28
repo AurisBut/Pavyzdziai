@@ -15,9 +15,9 @@ def spejimas():
         else:
             bandymas += 1
             if spejimas > skaicius:
-                print("Skaičius yra mažesnis")
+                print("Skaičius yra MAŽESNIS")
             else:
-                print("Skaičius yra didesnis")
+                print("Skaičius yra DIDESNIS")
 
     print(f"Tau prireikė {bandymas} bandymų")
 
