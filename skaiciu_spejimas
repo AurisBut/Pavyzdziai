@@ -7,7 +7,7 @@ def spejimas():
     teisingas = False
 
     while not teisingas:
-        spejimas = int(input("Įvesk skaičių: "))
+        spejimas = int(input("Atspėk skaičių nuo 0 iki 1000: "))
 
         if spejimas == skaicius:
             teisingas = True
