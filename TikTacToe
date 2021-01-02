@@ -1,0 +1,72 @@
+def display_game(game_list):
+    print('Esamas listas')
+    print(game_list)
+
+def position_choice():
+    choice = 'wrong'
+    while choice not in ['0', '1', '2']:
+        choice = input("Pasirinkite pozicija (0,1,2): ")
+        if choice not in ['0', '1', '2']:
+            print('Netinkamas pasirinkimas!')
+
+    return int(choice)
+
+def replacement_choice(game_list, position):
+    user_placement = input('Iveskite stringa i pasirinkta pozicija: ')
+    game_list[position] = user_placement
+    return game_list
+
+def gameon_choice():
+    choice = 'wrong'
+    while choice not in ['T', 'N']:
+        choice = input("Dar norite zaisti? (T/N): ").upper()
+        if choice not in ['T', 'N']:
+            print('Netinkamas pasirinkimas! T ar ne? ')
+
+    if choice == 'Y':
+        return True
+    else:
+        return False
+
+def user_choice():
+    # VARIABLES
+
+    # Initial
+    choice = 'WRONG'
+    acceptable_range = range(0, 10)
+    within_range = False
+
+    # TWO CONDITIONS TO CHECK
+    # DIGIT OR WITHIN_RANGE == False
+
+    while choice.isdigit() == False or within_range == False:
+        choice = input("Iveskite skaiciu (0-10): ")
+
+        # DIGIT CHECK
+        if choice.isdigit() == False:
+            print('Tai nera sveikasis skaicius!')
+
+        # RANGE CHECK
+        if choice.isdigit() == True:
+            if int(choice) in acceptable_range:
+                within_range = True
+            else:
+                within_range = False
+                print('Skaicius turi buti mazesnis uz 10!')
+
+    return choice
+
+game_on = True
+game_list = [0, 1, 2]
+while game_on:
+    display_game(game_list)
+    position = position_choice()
+    game_list = replacement_choice(game_list, position)
+    display_game(game_list)
+    game_on = gameon_choice()
+
+# display_game()
+# position_choice()
+# print(replacement_choice(game_list, 1))
+# gameon_choice()
+# user_choice()
