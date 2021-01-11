@@ -22,7 +22,7 @@ class Apskritimas():
         self.spindulys = spindulys
         self.zona = spindulys*spindulys*Apskritimas.pi
     # Method
-    def syzinoti_apimti(self):
+    def suzinoti_apimti(self):
         return self.spindulys * Apskritimas.pi * 2
 
 mano_apskritimas = Apskritimas(6)
