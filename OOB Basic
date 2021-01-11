@@ -1,0 +1,30 @@
+
+class Seima():
+    pavarde = 'Butvilauskas'
+    def __init__(self,mama,tevas,sesuo):
+        self.mama = mama
+        self.tevas = tevas
+        self.sesuo = sesuo
+
+    def mama1(self,amzius):
+        print('Mano vardas yra {}. Man yra {} metai'.format(self.mama,amzius))
+
+mano_seima = Seima(mama='Regina',tevas='Juozas',sesuo='Auksuole')
+print(f' Mano mamos vardas: {mano_seima.mama}, tevo vardas: {mano_seima.tevas}, sesers vardas: {mano_seima.sesuo}.\n Musu seimos pavarde: {mano_seima.pavarde}')
+print(mano_seima.mama1(62))
+
+class Apskritimas():
+
+    # Class object attribute
+    pi = 3.14
+
+    def __init__(self, spindulys=1):
+        self.spindulys = spindulys
+        self.zona = spindulys*spindulys*Apskritimas.pi
+    # Method
+    def syzinoti_apimti(self):
+        return self.spindulys * Apskritimas.pi * 2
+
+mano_apskritimas = Apskritimas(6)
+print(mano_apskritimas.syzinoti_apimti())
+print(mano_apskritimas.zona)
