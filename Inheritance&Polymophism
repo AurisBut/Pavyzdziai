@@ -1,0 +1,79 @@
+"""
+Inheritance
+"""
+class Animal():
+    def __init__(self):
+        print('ANIMAL CREATED')
+
+    def who_am_i(self):
+        return 'I am an animal'
+
+    def eat(self):
+        return 'I am eating'
+
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print('Dog Created')
+
+    def eat(self):
+        return 'I a dog and eating'
+
+    def bark(self):
+        return 'Woof!'
+
+mydog = Dog()
+print(mydog.eat())
+print(mydog.who_am_i())
+print(mydog.bark())
+
+
+""" 
+Polymorhism
+"""
+class Dog():
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name + ' says woof!'
+
+class Cat():
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name + ' says meow!'
+
+niko = Dog('Niko')
+felix = Cat('Felix')
+
+def pet_speak(pet):
+    print(pet.speak())
+
+pet_speak(niko)
+pet_speak(felix)
+
+class Animal():
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError('Subclass must implement this abstract method')
+
+""" Two classes sharing same method """
+class Dog(Animal):
+    def speak(self):
+        return self.name+ ' says woof!'
+
+class Cat(Animal):
+    def speak(self):
+        return self.name+ ' says meow!'
+
+Fido = Dog('Fido')
+Isis = Cat('Isis')
+
+print(Fido.speak(), Isis.speak())
