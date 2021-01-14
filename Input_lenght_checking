@@ -1,0 +1,10 @@
+while True:
+    try:
+        text = input("Please enter 8 digits: ")
+        number = int(text)
+        if len(text) != 8:
+            raise ValueError()
+    except ValueError:
+        print('Try once again')
+    else:
+        print(f'Correct, your number is: {number}')
